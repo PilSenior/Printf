@@ -81,3 +81,10 @@ int	ft_printf(const char *a, ...)
 	va_end(args);
 	return (len);
 }
+#include <stdio.h>
+
+int main()
+{
+	printf("%d\n", ft_printf("%"));
+	printf("%d\n", printf("%"));
+}
