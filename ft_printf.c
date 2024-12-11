@@ -18,7 +18,9 @@ int	ft_checker(const char a, va_list args)
 	int	ret;
 
 	ret = 0;
-	if ((a == 'd') || (a == 'i'))
+	if (a == '\0')
+		return (-1);
+	else if ((a == 'd') || (a == 'i'))
 		ret = (ft_putnbr(va_arg(args, int)));
 	else if (a == 'u')
 		ret = (ft_putnbr(va_arg(args, unsigned int)));
@@ -78,4 +80,11 @@ int	ft_printf(const char *a, ...)
 	len = ft_handle(a, args);
 	va_end(args);
 	return (len);
+}
+#include <stdio.h>
+
+int main()
+{
+	printf("%d\n", ft_printf("%"));
+	printf("%d\n", printf("%"));
 }
